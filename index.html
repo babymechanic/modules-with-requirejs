@@ -4,11 +4,24 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <script>
-    (function () {
-      var a = 10;
-      console.log(a);
+    var counter = (function () {
+      var value = 0;
+      return {
+        increase: function () {
+          value = value + 1;
+        },
+        decrease: function () {
+          value = value - 1;
+        },
+        currentValue: function () {
+          return value;
+        }
+      };
     })();
-    console.log(a);
+    counter.increase();
+    console.log(counter.currentValue());
+    counter.decrease();
+    console.log(counter.currentValue());
   </script>
 </head>
 <body>
