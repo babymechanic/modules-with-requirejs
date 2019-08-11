@@ -6,17 +6,25 @@
   <script>
     var counter = (function () {
       var value = 0;
-      return {
-        increase: function () {
-          value = value + 1;
-        },
-        decrease: function () {
-          value = value - 1;
-        },
-        currentValue: function () {
-          return value;
-        }
+
+      var increase = function () {
+        value = value + 1;
       };
+
+      var decrease = function () {
+        value = value - 1;
+      };
+
+      var currentValue = function () {
+        return value;
+      };
+
+      return {
+        increase: increase,
+        decrease: decrease,
+        currentValue: currentValue
+      };
+
     })();
     counter.increase();
     console.log(counter.currentValue());
